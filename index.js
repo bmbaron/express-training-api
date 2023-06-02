@@ -1,12 +1,13 @@
-const express = require('express')
-const app = express()
+const express = require('express');
+const app = express();
+const JSON = require('./data/trains.json');
 
-const PORT = process.env.PORT || 4000
+const PORT = process.env.PORT || 4000;
 
 app.get('/', (req, res) => {
-    res.send('Hello from Nerdbord!')
-})
+    res.send(JSON);
+});
 
 app.listen(PORT, () => {
-    console.log('Server listening on port 3000')
-})
+    console.log(`Server listening on port ${PORT}`);
+});
