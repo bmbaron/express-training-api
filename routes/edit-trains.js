@@ -31,7 +31,8 @@ trainRoutes.get('/trains/list', (req, res) => {
 
 trainRoutes.post('/trains/add', (req, res) => {
     const currentTrains = getTrainData();
-    currentTrains[10] = req.body;
+    const newAccountId = Math.floor(100000 + Math.random() * 900000);
+    currentTrains[newAccountId] = req.body
     console.log(currentTrains);
     saveTrainData(currentTrains);
     res.send({success: true, msg: 'account added successfully'});
